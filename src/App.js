@@ -10,8 +10,6 @@ function App() {
         <Routes>
           <Route exact path='/' element={<Home />} />
           <Route exact path='/useCallback' element={<Parents />} />
-
-
         </Routes>
       </BrowserRouter>
 
