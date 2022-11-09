@@ -5,7 +5,6 @@ import Parents from './UseCallBack/Parent'
 function App() {
   return (
     <div className="App">
-
       <BrowserRouter>
         <Routes>
           <Route exact path='/' element={<Home />} />
