@@ -21,7 +21,7 @@ jobs:
                 npm install
                 npm build
             - name: Deploy
-              uses: s0/git-publish-subdir-action@develop
+              uses: s0/Chandan9898Kumar/useCallback-memo@feature/usecallback
               env:
                 REPO: self
                 BRANCH: master
