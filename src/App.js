@@ -6,15 +6,15 @@ function App() {
   return (
     <div className="App">
 
-<BrowserRouter>
+      <BrowserRouter>
         <Routes>
           <Route exact path='/' element={<Home />} />
           <Route exact path='/useCallback' element={<Parents />} />
 
-          
+
         </Routes>
       </BrowserRouter>
-      
+
     </div>
   );
 }
