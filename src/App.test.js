@@ -8,6 +8,12 @@ test('renders learn react link', () => {
   expect(linkElement).toBeDefined()
 });
 
+test('To Match the Snapshot', () => {
+  render(<App />);
+  const linkElement = screen.getByText(/My React App/);
+  expect(linkElement).toMatchSnapshot()
+});
+
 test('It should be defined', () => {
   render(<App />);
   const linkElement = screen.getByText(/My React App/);
