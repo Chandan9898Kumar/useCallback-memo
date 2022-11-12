@@ -1,3 +1,5 @@
+[![Continuous Integration (CI)](https://github.com/Chandan9898Kumar/useCallback-memo/actions/workflows/Continuous_Integration.yml/badge.svg)](https://github.com/Chandan9898Kumar/useCallback-memo/actions/workflows/Continuous_Integration.yml)
+
 
 # Getting Started with Create React App
 
