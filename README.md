@@ -1,3 +1,9 @@
+![Workflow](https://github.com/<OWNER>/<REPOSITORY>/actions/workflows/<WORKFLOW_FILE>/badge.svg)
+// Example Workflow Badge Url:
+![example workflow](https://github.com/github/docs/actions/workflows/main.yml/badge.svg)
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
