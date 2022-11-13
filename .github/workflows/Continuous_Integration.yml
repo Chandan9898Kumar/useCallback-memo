@@ -1,9 +1,14 @@
 # The name of the workflow we given here is 'Continuous Integration (CI)'
 # as it will appear in the "Actions" tab of the GitHub repository.
 name: Continuous Integration (CI)
+
+# run-name - The name for workflow runs generated from the workflow,
+# which will appear in the list of workflow runs on your repository's "Actions" tab.
 run-name: ${{ github.actor }} is testing out GitHub Actions
 
 # Controls when the action will run. Triggers the workflow on push or pull request.
+
+#push event,a workflow run is triggered every time someone pushes a change to the repository or merges a pull request.
 on:
   push:
     branches:
@@ -15,9 +20,11 @@ on:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel.
 
+# Jobs - Groups together all the jobs that run in the learn-github-actions workflow.
 jobs:
   # This workflow contains a single job called "build".
   build:
+
     #A runner is a server that runs your workflows when they're triggered. 
     #Each runner can run a single job at a time. GitHub provides Ubuntu Linux, Microsoft Windows,
     # and macOS runners to run your workflows
@@ -33,6 +40,11 @@ jobs:
       - name: Checkout to the repository
         uses: actions/checkout@v2
 
+
+      #The 'uses' keyword specifies that this step will run v3 of the actions/checkout action.
+      # This is an action that checks out your repository onto the runner, allowing you to 
+      #run scripts or other actions against your code (such as build and test tools). 
+
       # Some actions require inputs that you must set using the 'with' .
       # set-up node version
       - name: Setup Node.js environment
@@ -40,7 +52,7 @@ jobs:
         with:
           # Reads the node version from the .nvmrc file itself 
           node-version-file: '.nvmrc'
-          # The node version can be hard-coded 
+          # The node version can be hard-coded . ex- 
           # node-version: 14
 
       # install dependencies.
@@ -50,6 +62,12 @@ jobs:
       # Run test cases and this could ensure minimum coverage as well if set.
       - name: Execute test cases
         run: npm run test
+
+      - name: Archive code coverage results
+        uses: actions/upload-artifact@v3
+        with:
+          name: code-coverage-report
+          path: output/test/code-coverage.html
 
       # - name: Create test build
       #   run: npm run build
